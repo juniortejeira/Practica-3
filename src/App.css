@@ -1,0 +1,10 @@
+.LeyendaError {
+	display: none;
+}
+
+.LeyendaError[valido="false"] {
+	display: block;
+	font-size: 12px;
+	margin-bottom: 0;
+	border: solid red;
+}
