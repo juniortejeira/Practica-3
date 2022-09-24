@@ -20,7 +20,7 @@ function App() {
 		nombre: /^[a-zA-ZÀ-ÿ\s]{1,35}$/, // Letras y espacios, pueden llevar acentos.
 		apellido: /^[a-zA-ZÀ-ÿ\s]{1,30}$/, // Letras y espacios, pueden llevar acentos
 		cedula: /^\d{8}$/, //8 numeros.
-		// edad: /^\d{8}$/, //8 numeros.                                               //selector (despues)
+		edad: /^\d{2}$/, //8 numeros.                                               //selector (despues)
 		//password: /^.{4,12}$/, // 4 a 12 digitos.
 		correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 		telefono: /^\d{9}$/, //9 numeros.
@@ -99,6 +99,18 @@ function App() {
           ni guiones. Deberá tener una extensión de 8 caracteres."
 					expresionRegular={expresiones.cedula}//expresion lo importamos, es una validacion de que todos los estados sean 'true'
 				/>
+
+				<ComponenteInput
+					estado={edad}
+					cambiarEstado={cambiarEdad}
+					tipo="numero"
+					label="Edad"
+					placeholder="45"
+					name="Edad"
+					leyendaError="Debe contener tu edad en numeros"
+					expresionRegular={expresiones.edad}//expresion lo importamos, es una validacion de que todos los estados sean 'true'
+				/>
+
 				<ComponenteInput
 					estado={correo}
 					cambiarEstado={cambiarCorreo}
@@ -148,29 +160,34 @@ function App() {
 					estado={lugartrabajo}
 					cambiarEstado={cambiarLugartrabajo}
 					tipo="text"
-					label="Lugartrabajo"
+					label="Lugar trabajo"
 					placeholder="Matea"
 					name="Lugartrabajo"
 					leyendaError="El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo."
 					expresionRegular={expresiones.lugartrabajo}//expresion lo importamos, es una validacion de que todos los estados sean 'true'
 				/>
 
-
-
-				{/*  {formularioValido === false && <MensajeError>
-					<p>
-						<FontAwesomeIcon icon={faExclamationTriangle}/>
-						<b>Error:</b> Por favor rellena el formulario correctamente.
-					</p>
-				</MensajeError>}
-				<ContenedorBotonCentrado>
-					<Boton type="submit">Enviar</Boton>
-					{formularioValido === true && <MensajeExito>Formulario enviado exitosamente!</MensajeExito>}
-				</ContenedorBotonCentrado>
-			*/}
 				<select>
-					<option>Programador</option>
-					<option>Tester</option>
+					<option>Seleccionar</option>
+					<option>Artigas</option>
+					<option>Canelones</option>
+					<option>Cerro Largo</option>
+					<option>Colonia</option>
+					<option>Durazno</option>
+					<option>Flores</option>
+					<option>Florida</option>
+					<option>Lavalleja</option>
+					<option>Maldonado</option>
+					<option>Montevideo</option>
+					<option>Paysandú</option>
+					<option>Río Negro</option>
+					<option>Rivera</option>
+					<option>Rocha</option>
+					<option>Salto</option>
+					<option>San José</option>
+					<option>Soriano</option>
+					<option>Tacuarembó</option>
+					<option>Treinta y Tres</option>
 				</select>
 
 				{formularioValido === false && <div className='MensajeError'>
